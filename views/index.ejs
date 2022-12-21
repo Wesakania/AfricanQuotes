@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+  <title>STARWARS QUOTE</title>
+</head>
+<body>
+    <h1 data-position="header">African Quotes</h1>
+    
+    <section data-position="add-quotes">
+    <h2>Add quotes</h2>
+  <form action="/quotes" method="POST">
+        <input type="text" name="name" id="#" placeholder="Name">
+        <input type="text" name="quote" id="#" placeholder="Quote">
+        <button type="submit">Submit</button>
+  </form>
+  </section>
+  
+  <section data-position="update-quote">
+      <div>
+        <h2>African Quotes invades!</h2>
+        <p>
+          Replace the first Ethiopia's quote with a quote written by African.
+        </p>
+        <button id="update-button">Replace Ethiopian Quote</button>
+      </div>
+  </section>
+
+  <section  data-position="delete-quote">
+    <div>
+      <h2>Remove Africa Quote!</h2>
+      <p>
+        Delete one One Africa quote. Does nothing if there are no more Africa
+        quote
+      </p>
+      <button id="delete-button">Delete African quote</button>
+      <div id="message"></div>
+    </div>
+  </section>
+
+  <section data-position="quotes">
+    <h2>Quotes</h2> 
+  <ul class="quotes">
+     <% for(var i = 0; i < quotes.length; i++){%>
+       <li class="quote">
+        <span><%= quotes[i].name %></span>:
+        <span><%= quotes[i].quote %></span>
+       </li>
+    <% } %>
+  </ul>
+  </section>
+
+<script src="main.js"></script>
+</body>
+</html>
